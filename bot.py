@@ -86,8 +86,9 @@ async def message(ctx, arg):
 		emb.set_thumbnail(url = "https://images-ext-1.discordapp.net/external/1AXiajN3xjbjin6VR-J4QNOG4Gy4wPP-uabVCUGMAp0/https/media.discordapp.net/attachments/713367810985689110/714404218777239614/anim.gif")
 		reactionm = await ctx.channel.send(embed = emb)
 		await reactionm.add_reaction(diadem)
+token = os.environ.get("BOT_TOKEN")
 
-ds.run("NzE4MDk2OTQ4NTA2MTMyNDgw.Xtj55g.E5T4h3Ga2UcFhCXRS4FlhodmOLE")
+ds.run(token)
 #@ds.event
 #async def on_reaction_add(reaction, user)
 #	if reaction.message ==
