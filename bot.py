@@ -1,6 +1,5 @@
 
 
-
 from discord.ext import commands
 from discord.utils import get
 import os
@@ -36,7 +35,8 @@ async def on_raw_reaction_add(reaction):
 async def on_raw_reaction_remove(reaction):
 	channel = ds.get_channel(reaction.channel_id)
 	guild = ds.get_guild(701453861679792195)
-	user = guild.get_member(reaction.user_id)
+	aye = reaction.user_id
+	user = guild.get_member(aye)
 	сhannel1 = ds.get_channel(768411788264865802)
 	emb = discord.Embed()
 	emb.add_field(name = ":x: Вы сняли с себя роль Игрок :x: ", value = """Вы потеряли доступ к большинству каналов. 
@@ -124,12 +124,11 @@ async def message(ctx, arg):
 		
 {diadem} - {role.mention}
 """)
-		emb.set_footer(text = "Нажимая на данную эмоцию вы автоматически соглашаетесь со всеми правилами поведения на нашем дискорд сервере.")
+		emb.set_footer(text = "Нажимая на данную эмоцию вы автоматически соглашаетесь со всеми правилами поведения на вашем дискорд сервере.")
 		emb.set_author(name = "Роли дискорд-канала Diadem. ", icon_url="https://images-ext-1.discordapp.net/external/dMIAfxxizvGvN8yAjHE1rIEZlZo44PJEt2i2oneBoYM/https/images-ext-1.discordapp.net/external/8U-ni-iOMzcYx-9W3FV5BwlGTNikVeRxEH3E5hYnKzA/https/media.discordapp.net/attachments/713367810985689110/714478708747927592/unknown.png")
 		emb.set_thumbnail(url = "https://images-ext-1.discordapp.net/external/1AXiajN3xjbjin6VR-J4QNOG4Gy4wPP-uabVCUGMAp0/https/media.discordapp.net/attachments/713367810985689110/714404218777239614/anim.gif")
 		reactionm = await ctx.channel.send(embed = emb)
 		await reactionm.add_reaction(diadem)
-
 
 token = os.environ.get("BOT_TOKEN")
 
