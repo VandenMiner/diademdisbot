@@ -1,5 +1,7 @@
 
 
+
+
 from discord.ext import commands
 from discord.utils import get
 import os
@@ -13,7 +15,28 @@ ds = commands.Bot(command_prefix='!')
 async def on_ready():
     await ds.change_presence(status=discord.Status.online, activity=discord.Game("илюшка гей"))
     print("Запуск")
-
+@ds.event
+async def on_raw_reaction_add(reaction):
+	channel = ds.get_channel(reaction.channel_id)
+	user = reaction.member
+	guild = ds.get_guild(701453861679792195)
+	сhannel1 = ds.get_channel(768411788264865802)
+	if channel == сhannel1:
+		role = discord.utils.get(guild.roles, name="Игрок")
+		role2 = discord.utils.get(guild.roles, name="Без роли")
+		await user.add_roles(role)
+		await user.remove_roles(role2)
+@ds.event
+async def on_raw_reaction_remove(reaction):
+	channel = ds.get_channel(reaction.channel_id)
+	guild = ds.get_guild(701453861679792195)
+	user = guild.get_member(reaction.user_id)
+	сhannel1 = ds.get_channel(768411788264865802)
+	if channel == сhannel1:
+		role = guild.get_role(713365777033592834)
+		role2 = discord.utils.get(guild.roles, name="Без роли")
+		await user.remove_roles(role)
+		await user.add_roles(role2)
 @ds.event
 async def on_member_join(member):
     channel = ds.get_channel(713305916044214292)
@@ -60,10 +83,18 @@ async def on_voice_state_update(member,before,after):
                 await channel2.delete()
 
 
+
+
+@ds.command(pass_context = True)
+@commands.has_permissions(administrator = True)
+async def член(ctx, amount = 1000):
+	await ctx.channel.send("ахаха дурак")
+
+
 @ds.command(pass_context = True)
 @commands.has_permissions(administrator = True)
 async def clear(ctx, amount = 1000):
-	ctx.channel.purge(limit = amount)
+	await ctx.channel.purge(limit = amount)
 
 @ds.command(pass_context = True)
 @commands.has_permissions(administrator = True)
@@ -86,6 +117,7 @@ async def message(ctx, arg):
 		emb.set_thumbnail(url = "https://images-ext-1.discordapp.net/external/1AXiajN3xjbjin6VR-J4QNOG4Gy4wPP-uabVCUGMAp0/https/media.discordapp.net/attachments/713367810985689110/714404218777239614/anim.gif")
 		reactionm = await ctx.channel.send(embed = emb)
 		await reactionm.add_reaction(diadem)
+
 token = os.environ.get("BOT_TOKEN")
 
 ds.run(token)
