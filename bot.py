@@ -1,7 +1,6 @@
 
 
 
-
 from discord.ext import commands
 from discord.utils import get
 import os
@@ -21,6 +20,13 @@ async def on_raw_reaction_add(reaction):
 	user = reaction.member
 	guild = ds.get_guild(701453861679792195)
 	сhannel1 = ds.get_channel(768411788264865802)
+	emb = discord.Embed()
+	emb.add_field(name = ":white_check_mark: Вы установили себе роль Игрок :white_check_mark: ", value = """Теперь вам доступны большинство каналов
+дискорд-сервера **Diadem**. 
+Для того чтобы снять роль - просто уберите свою реакцию.""")
+	emb.color = discord.Colour.green()
+	emb.set_thumbnail(url = "https://images-ext-1.discordapp.net/external/1AXiajN3xjbjin6VR-J4QNOG4Gy4wPP-uabVCUGMAp0/https/media.discordapp.net/attachments/713367810985689110/714404218777239614/anim.gif")
+	await user.send(embed = emb)
 	if channel == сhannel1:
 		role = discord.utils.get(guild.roles, name="Игрок")
 		role2 = discord.utils.get(guild.roles, name="Без роли")
@@ -32,6 +38,12 @@ async def on_raw_reaction_remove(reaction):
 	guild = ds.get_guild(701453861679792195)
 	user = guild.get_member(reaction.user_id)
 	сhannel1 = ds.get_channel(768411788264865802)
+	emb = discord.Embed()
+	emb.add_field(name = ":x: Вы сняли с себя роль Игрок :x: ", value = """Вы потеряли доступ к большинству каналов. 
+Для того чтобы вернуть роль - просто поставте реакцию""")
+	emb.color = discord.Colour.red()
+	emb.set_thumbnail(url = "https://images-ext-1.discordapp.net/external/1AXiajN3xjbjin6VR-J4QNOG4Gy4wPP-uabVCUGMAp0/https/media.discordapp.net/attachments/713367810985689110/714404218777239614/anim.gif")
+	await user.send(embed = emb)
 	if channel == сhannel1:
 		role = guild.get_role(713365777033592834)
 		role2 = discord.utils.get(guild.roles, name="Без роли")
@@ -112,11 +124,12 @@ async def message(ctx, arg):
 		
 {diadem} - {role.mention}
 """)
-		emb.set_footer(text = "Нажимая на данную эмоцию вы автоматически соглашаетесь со всеми правилами поведения на нашем дискорд сервере.")
+		emb.set_footer(text = "Нажимая на данную эмоцию вы автоматически соглашаетесь со всеми правилами поведения на вашем дискорд сервере.")
 		emb.set_author(name = "Роли дискорд-канала Diadem. ", icon_url="https://images-ext-1.discordapp.net/external/dMIAfxxizvGvN8yAjHE1rIEZlZo44PJEt2i2oneBoYM/https/images-ext-1.discordapp.net/external/8U-ni-iOMzcYx-9W3FV5BwlGTNikVeRxEH3E5hYnKzA/https/media.discordapp.net/attachments/713367810985689110/714478708747927592/unknown.png")
 		emb.set_thumbnail(url = "https://images-ext-1.discordapp.net/external/1AXiajN3xjbjin6VR-J4QNOG4Gy4wPP-uabVCUGMAp0/https/media.discordapp.net/attachments/713367810985689110/714404218777239614/anim.gif")
 		reactionm = await ctx.channel.send(embed = emb)
 		await reactionm.add_reaction(diadem)
+
 
 token = os.environ.get("BOT_TOKEN")
 
