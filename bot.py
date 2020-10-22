@@ -64,7 +64,7 @@ async def on_raw_reaction_add(reaction):
 @ds.event
 async def on_raw_reaction_remove(reaction):
 	channel = ds.get_channel(reaction.channel_id)
-	guild = ds.get_guild(701453861679792195)
+	guild = ds.get_guild(reaction.guild_id)
 	print(str(reaction.user_id))
 	user = guild.get_member(reaction.user_id)
 	сhannel1 = ds.get_channel(768411788264865802)
@@ -79,6 +79,7 @@ async def on_raw_reaction_remove(reaction):
 		role2 = discord.utils.get(guild.roles, name="Без роли")
 		await user.remove_roles(role)
 		await user.add_roles(role2)
+
 
 @ds.event
 async def on_voice_state_update(member,before,after):
