@@ -1,4 +1,3 @@
-
 from discord.ext import commands
 from discord.utils import get
 import os
@@ -8,10 +7,6 @@ import asyncio
 
 
 ds = commands.Bot(command_prefix='!')
-@ds.event
-async def on_ready():
-    await ds.change_presence(status=discord.Status.online, activity=discord.Game("илюшка гей"))
-    print("Запуск")
 @ds.event
 async def on_member_join(member):
     channel = ds.get_channel(713305916044214292)
@@ -80,7 +75,6 @@ async def on_raw_reaction_remove(reaction):
 		await user.remove_roles(role)
 		await user.add_roles(role2)
 
-
 @ds.event
 async def on_voice_state_update(member,before,after):
     if after.channel.id == 718359790778318918:
@@ -94,7 +88,10 @@ async def on_voice_state_update(member,before,after):
                     return len(channel2.members) == 0
                 await ds.wait_for('voice_state_update', check=check)
                 await channel2.delete()
-
+@ds.event
+async def on_ready():
+    await ds.change_presence(status=discord.Status.online, activity=discord.Game("илюшка гей"))
+    print("Запуск")
 
 
 
