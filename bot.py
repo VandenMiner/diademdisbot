@@ -64,11 +64,11 @@ async def on_raw_reaction_add(reaction):
 @ds.event
 async def on_raw_reaction_remove(reaction):
 	channel = ds.get_channel(reaction.channel_id)
-	guild = ds.get_guild(reaction.guild_id)
-	print(str(reaction.user_id))
-	user = guild.get_member(reaction.user_id)
 	сhannel1 = ds.get_channel(768411788264865802)
 	if channel == сhannel1:
+		guild = ds.get_guild(reaction.guild_id)
+		print(str(reaction.user_id))
+		user = guild.get_member(reaction.user_id)
 		emb = discord.Embed()
 		emb.add_field(name = ":x: Вы сняли с себя роль Игрок :x: ", value = """Вы потеряли доступ к большинству каналов. 
 	Для того чтобы вернуть роль - просто поставте реакцию""")
