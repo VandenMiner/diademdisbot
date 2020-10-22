@@ -68,7 +68,7 @@ async def on_raw_reaction_remove(reaction):
 	if channel == сhannel1:
 		guild = ds.get_guild(reaction.guild_id)
 		print(str(reaction.user_id))
-		user = guild.get_member(reaction.user_id)
+		user = discord.utils.get(guild.members, id = reaction.user_id)
 		emb = discord.Embed()
 		emb.add_field(name = ":x: Вы сняли с себя роль Игрок :x: ", value = """Вы потеряли доступ к большинству каналов. 
 	Для того чтобы вернуть роль - просто поставте реакцию""")
