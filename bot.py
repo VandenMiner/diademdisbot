@@ -1,5 +1,4 @@
 
-
 from discord.ext import commands
 from discord.utils import get
 import os
@@ -66,8 +65,8 @@ async def on_raw_reaction_add(reaction):
 async def on_raw_reaction_remove(reaction):
 	channel = ds.get_channel(reaction.channel_id)
 	guild = ds.get_guild(701453861679792195)
-	aye = reaction.user_id
-	user = guild.get_member(aye)
+	print(str(reaction.user_id))
+	user = guild.get_member(reaction.user_id)
 	сhannel1 = ds.get_channel(768411788264865802)
 	if channel == сhannel1:
 		emb = discord.Embed()
