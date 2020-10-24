@@ -132,6 +132,3 @@ async def message(ctx, arg):
 token = os.environ.get("BOT_TOKEN")
 
 ds.run(token)
-#@ds.event
-#async def on_reaction_add(reaction, user)
-#	if reaction.message ==
