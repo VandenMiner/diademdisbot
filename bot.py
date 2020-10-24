@@ -129,6 +129,7 @@ async def message(ctx, arg):
 		await reactionm.add_reaction(diadem)
 
 
+
 token = os.environ.get("BOT_TOKEN")
 
 ds.run(token)
