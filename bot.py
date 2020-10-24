@@ -128,7 +128,7 @@ async def message(ctx, arg):
 		reactionm = await ctx.channel.send(embed = emb)
 		await reactionm.add_reaction(diadem)
 
-
+#1
 
 
 token = os.environ.get("BOT_TOKEN")
