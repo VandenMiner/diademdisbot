@@ -6,9 +6,9 @@ import asyncio
 
 intents = discord.Intents.default()
 
-ds = commands.Bot(command_prefix='!', intents=intents)
+ds = commands.Bot(command_prefix='!')
 @ds.event
-async def on_member_join(member):
+async def on_member_join(member, intents=intents):
     channel = ds.get_channel(713305916044214292)
 
 
