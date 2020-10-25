@@ -90,7 +90,7 @@ async def on_voice_state_update(member,before,after):
                 await channel2.delete()
 @ds.event
 async def on_ready():
-    await ds.change_presence(status=discord.Status.online, activity=discord.Game("илюшка гей"))
+    await ds.change_presence(status=discord.Status.online, activity=discord.Game("Minecraft"))
     print("Запуск")
 
 
