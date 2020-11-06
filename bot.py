@@ -147,7 +147,7 @@ async def message(ctx, arg):
 **0) http://minecraftmonitoring.ru/server-diadem (можно голосовать)**""")
 		emb.set_author(name = ":yellow_heart: Друзья, именно вы воплощаете будущие проекта. Не стойте в стороне и внесите свою долю  в развитие Diadem'а и проголосуй на пониторигах. ", icon_url="https://images-ext-1.discordapp.net/external/dMIAfxxizvGvN8yAjHE1rIEZlZo44PJEt2i2oneBoYM/https/images-ext-1.discordapp.net/external/8U-ni-iOMzcYx-9W3FV5BwlGTNikVeRxEH3E5hYnKzA/https/media.discordapp.net/attachments/713367810985689110/714478708747927592/unknown.png")
 		emb.set_thumbnail(url = "https://images-ext-1.discordapp.net/external/1AXiajN3xjbjin6VR-J4QNOG4Gy4wPP-uabVCUGMAp0/https/media.discordapp.net/attachments/713367810985689110/714404218777239614/anim.gif")
-		ctx.channel.send(embed = emb)
+		await ctx.channel.send(embed = emb)
 #1
 token = os.environ.get("BOT_TOKEN")
 
