@@ -139,7 +139,7 @@ async def message(ctx, arg):
 **2. [minecraftrating.ru](http://minecraftrating.ru/server/102252/) (можно голосовать)**
 **3. [hotmc.ru](https://hotmc.ru/minecraft-server-199017) (можно голосовать)**
 **4. [servera-minecraft.net](https://servera-minecraft.net/server/39140)**
-**5. [mc-monitoring.info](https://mc-monitoring.info/server/edit/11397) (можно голосовать)**
+**5. [mc-monitoring.info](https://mc-monitoring.info/server/11397) (можно голосовать)**
 **6. [minecraft-statistic.net](https://minecraft-statistic.net/ru/server/54.38.160.107_25612.html) (можно голосовать)**
 **7. [tmonitoring.com](https://tmonitoring.com/server/diadem/) (можно голосовать)**
 **8. [mc-servera.net](https://mc-servera.net/90866) (можно голосовать)**
