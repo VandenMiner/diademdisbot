@@ -127,98 +127,28 @@ async def message(ctx, arg):
 		emb.set_thumbnail(url = "https://images-ext-1.discordapp.net/external/1AXiajN3xjbjin6VR-J4QNOG4Gy4wPP-uabVCUGMAp0/https/media.discordapp.net/attachments/713367810985689110/714404218777239614/anim.gif")
 		reactionm = await ctx.channel.send(embed = emb)
 		await reactionm.add_reaction(diadem)
+		
+	if arg == "2":
 
+		diadem = get(ds.emojis, name='Diadem')
+		role = discord.utils.get(ctx.guild.roles, name="Игрок")
+
+		emb = discord.Embed()
+		emb.color = discord.Colour.gold()
+		emb.add_field(name = " ‏", value=f"""**1) http://monitoringminecraft.ru/server/655031**
+**2) http://minecraftrating.ru/server/102252/ (можно голосовать)**
+**3) https://hotmc.ru/minecraft-server-199017 (можно голосовать)**
+**4) https://servera-minecraft.net/server/39140**
+**5) https://mc-monitoring.info/server/edit/11397 (можно голосовать + можно сделать систему поощерений)**
+**6) https://minecraft-statistic.net/ru/server/54.38.160.107_25612.html (можно голосовать)**
+**7) https://tmonitoring.com/server/diadem/ (можно голосовать)**
+**8) https://mc-servera.net/90866 (можно голосовать)**
+**9) http://mcrate.su/project/9097 (можно голосовать)**
+**0) http://minecraftmonitoring.ru/server-diadem (можно голосовать)**""")
+		emb.set_author(name = ":yellow_heart: Друзья, именно вы воплощаете будущие проекта. Не стойте в стороне и внесите свою долю  в развитие Diadem'а и проголосуй на пониторигах. ", icon_url="https://images-ext-1.discordapp.net/external/dMIAfxxizvGvN8yAjHE1rIEZlZo44PJEt2i2oneBoYM/https/images-ext-1.discordapp.net/external/8U-ni-iOMzcYx-9W3FV5BwlGTNikVeRxEH3E5hYnKzA/https/media.discordapp.net/attachments/713367810985689110/714478708747927592/unknown.png")
+		emb.set_thumbnail(url = "https://images-ext-1.discordapp.net/external/1AXiajN3xjbjin6VR-J4QNOG4Gy4wPP-uabVCUGMAp0/https/media.discordapp.net/attachments/713367810985689110/714404218777239614/anim.gif")
+		ctx.channel.send(embed = emb)
 #1
-
-@ds.command(
-    name="mc",
-    aliases=["майн", "мс", "minecraft", "mine"],
-    brief="Информация о Minecraft сервере",
-    usage="mc <ip> [port]",
-    description="Информация о Minecraft сервере")
-async def _mc(self, ctx, ip, port=None):
-    message = await ctx.send("Идёт сбор информации, пожалуйста подождите.")
-
-    if port is None:
-        server = MinecraftServer.lookup(f"{ip}:25565")
-    else:
-        try:
-            server = MinecraftServer.lookup(f"{ip}:{port}")
-        except ValueError:
-            embed = discord.Embed(title="Ошибка Подключения", description="Порт вне допустимого диапазона **0-65535**.",
-                                  color=0xb20000)
-            await message.delete()
-            return await ctx.send(embed=embed)
-
-    try:
-        server_ping = server.ping()
-        server_status = server.status()
-
-    except socket.timeout:
-        players = "`❌ Не Доступно`"
-        version = "`❌ Не Доступно`"
-        description = "`❌ Не Доступно`" 
-        ping = "`❌ Не Доступно`"
-        status = "🔴 Отключен"
-
-    except socket.gaierror:
-        embed = discord.Embed(title="Ошибка Ввода", description="Вы ввели не действительный IP или Порт.", color=0xb20000)
-        await message.delete()
-        return await ctx.send(embed=embed)
-
-    except IOError as error:
-        embed = discord.Embed(title="Ошибка Подключение", description="Мне не удалось получить информацию с этого сервера.\n"
-                                                                      "Возможно у него стоит какая-та защита.\n\n"
-                                                                      f"`Ошибка: {error}`",
-                              color=0xb20000)
-        await message.delete()
-        return await ctx.send(embed=embed)
-
-    else:
-        players = f"{server_status.players.online}/{server_status.players.max}"
-        version = server_status.version.name
-
-        if 'extra' in server_status.description:
-            description = f"\n- {server_status.description['extra'][0]['text']}\n" \
-                          f"- {server_status.description['extra'][1]['text']}\n" \
-                          f"- {server_status.description['extra'][2]['text']}"
-        else:
-            description = server_status.description['text']
-
-        ping = server_ping
-        status = "🟢 Включен"
-
-    if status == "🟢 Включен":
-        try:
-            server_query = server.query()
-
-        except socket.timeout:
-            query = "Query отключен на сервере"
-
-        else:
-            query = f"**Хост:** {server_query.host}\n" \
-                    f"**Софт:** {server_query.software}\n" \
-                    f"**MOTD:** {server_query.motd}\n" \
-                    f"**Плагины:** {''.join(server_query.plugins)}\n" \
-                    f"**Игроки:** {', '.join(server_query.players.names)}"
-
-    else:
-        query = "`❌ Не Доступно`"
-
-    embed = discord.Embed(
-        title="Статус Travedit Сервер",
-        description=f"**IP:** {ip}\n"
-                    f"**Описание:** {description}\n"
-                    f"**Версия:** {version}",
-        color=0xFF7F3F)
-    embed.add_field(name="Игроки", value=players, inline=False)
-    embed.add_field(name="Статус", value=status, inline=False)
-    embed.add_field(name="Пинг", value=ping, inline=False)
-    embed.add_field(name="Данные через Query",
-                    value=query,
-                    inline=False)
-
-    await message.edit(content=None, embed=embed)
 token = os.environ.get("BOT_TOKEN")
 
 ds.run(token)
