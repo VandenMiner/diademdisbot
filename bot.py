@@ -136,16 +136,16 @@ async def message(ctx, arg):
 		emb = discord.Embed()
 		emb.color = discord.Colour.gold()
 		emb.add_field(name = " ‏", value=f"""**1. [monitoringminecraft.ru](http://monitoringminecraft.ru/server/655031)**
-**2. [http://minecraftrating.ru](http://minecraftrating.ru/server/102252/ **
-**3. [hotmc.ru](https://hotmc.ru/minecraft-server-199017) **
+**2. [minecraftrating.ru](http://minecraftrating.ru/server/102252/) (можно голосовать)**
+**3. [hotmc.ru](https://hotmc.ru/minecraft-server-199017) (можно голосовать)**
 **4. [servera-minecraft.net](https://servera-minecraft.net/server/39140)**
-**5. [mc-monitoring.info](https://mc-monitoring.info/server/edit/11397) **
-**6. [minecraft-statistic.net](https://minecraft-statistic.net/ru/server/54.38.160.107_25612.html)**
-**7. [tmonitoring.com](https://tmonitoring.com/server/diadem/)**
-**8. [mc-servera.net](https://mc-servera.net/90866)**
-**9. [mcrate.su](http://mcrate.su/project/9097)**
-**10. [minecraftmonitoring.ru](http://minecraftmonitoring.ru/server-diadem)**""")
-		emb.set_author(name = ":yellow_heart: Друзья, именно вы воплощаете будущие проекта. Не стойте в стороне и внесите свою долю  в развитие Diadem'а и проголосуй на пониторигах. ", icon_url="https://images-ext-1.discordapp.net/external/dMIAfxxizvGvN8yAjHE1rIEZlZo44PJEt2i2oneBoYM/https/images-ext-1.discordapp.net/external/8U-ni-iOMzcYx-9W3FV5BwlGTNikVeRxEH3E5hYnKzA/https/media.discordapp.net/attachments/713367810985689110/714478708747927592/unknown.png")
+**5. [mc-monitoring.info](https://mc-monitoring.info/server/edit/11397) (можно голосовать)**
+**6. [minecraft-statistic.net](https://minecraft-statistic.net/ru/server/54.38.160.107_25612.html) (можно голосовать)**
+**7. [tmonitoring.com](https://tmonitoring.com/server/diadem/) (можно голосовать)**
+**8. [mc-servera.net](https://mc-servera.net/90866) (можно голосовать)**
+**9. [mcrate.su](http://mcrate.su/project/9097) (можно голосовать)**
+**10. [minecraftmonitoring.ru](http://minecraftmonitoring.ru/server-diadem) (можно голосовать)**""")
+		emb.set_author(name = "Друзья, именно вы воплощаете будущие проекта. Не стойте в стороне и внесите свою долю  в развитие Diadem'а и проголосуй на пониторигах. ", icon_url="https://images-ext-1.discordapp.net/external/dMIAfxxizvGvN8yAjHE1rIEZlZo44PJEt2i2oneBoYM/https/images-ext-1.discordapp.net/external/8U-ni-iOMzcYx-9W3FV5BwlGTNikVeRxEH3E5hYnKzA/https/media.discordapp.net/attachments/713367810985689110/714478708747927592/unknown.png")
 		emb.set_thumbnail(url = "https://images-ext-1.discordapp.net/external/1AXiajN3xjbjin6VR-J4QNOG4Gy4wPP-uabVCUGMAp0/https/media.discordapp.net/attachments/713367810985689110/714404218777239614/anim.gif")
 		await ctx.channel.send(embed = emb)
 #1
