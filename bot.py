@@ -167,7 +167,12 @@ value=f"""
 Скорее присоединяйся к другим игрокам и оцени работу, которую мы проделали для вас, наших будущих игроков.
 
 Начать играть можно в несколько простых шагов, тебя ждёт :fire: потрясающий игровой мир! Не затягивай, начни сейчас — **54.38.160.107:25612**
-""")
+
+
+
+Все ссылки:
+Дискорд - https://discord.gg/QenrhPs
+Группа вк - https://vk.com/diadem.mine""")
 		emb.set_author(name = "Как? Ты ещё не с нами?", icon_url="https://images-ext-1.discordapp.net/external/dMIAfxxizvGvN8yAjHE1rIEZlZo44PJEt2i2oneBoYM/https/images-ext-1.discordapp.net/external/8U-ni-iOMzcYx-9W3FV5BwlGTNikVeRxEH3E5hYnKzA/https/media.discordapp.net/attachments/713367810985689110/714478708747927592/unknown.png")
 		emb.set_thumbnail(url = "https://images-ext-1.discordapp.net/external/1AXiajN3xjbjin6VR-J4QNOG4Gy4wPP-uabVCUGMAp0/https/media.discordapp.net/attachments/713367810985689110/714404218777239614/anim.gif")
 		emb.set_image(url = "https://images-ext-1.discordapp.net/external/NVxocLXvdV1IOryP9ZXNo-8JRU2xgV0tUquS8AGWE1U/https/sun9-47.userapi.com/7PbB2Tlxtuv93lpAjRF31poSVjSGFIyeCxNY1g/o5KChQklJIw.jpg?width=962&height=541")
