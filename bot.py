@@ -148,6 +148,24 @@ async def message(ctx, arg):
 		emb.set_author(name = "Друзья, именно вы воплощаете будущие проекта. Не стойте в стороне и внесите свою долю  в развитие Diadem'а и проголосуй на пониторигах. ", icon_url="https://images-ext-1.discordapp.net/external/dMIAfxxizvGvN8yAjHE1rIEZlZo44PJEt2i2oneBoYM/https/images-ext-1.discordapp.net/external/8U-ni-iOMzcYx-9W3FV5BwlGTNikVeRxEH3E5hYnKzA/https/media.discordapp.net/attachments/713367810985689110/714478708747927592/unknown.png")
 		emb.set_thumbnail(url = "https://images-ext-1.discordapp.net/external/1AXiajN3xjbjin6VR-J4QNOG4Gy4wPP-uabVCUGMAp0/https/media.discordapp.net/attachments/713367810985689110/714404218777239614/anim.gif")
 		await ctx.channel.send(embed = emb)
+	if arg == "3":
+
+		diadem = get(ds.emojis, name='Diadem')
+		role = discord.utils.get(ctx.guild.roles, name="Игрок")
+
+		emb = discord.Embed()
+		emb.color = discord.Colour.gold()
+		emb.add_field(name = " ‏Тогда мы с радостью сообщаем, об открытие **Diadem**! :tada: Приглашаем новых игроков начать играть на только что открывшемся проекте. ", 
+value=f"""Наш первый игровой режим "**SkyBlock**" успешно открыт и готов принять новых игроков, подарив им незабываемые эмоции от насыщенного игрового геймплея. 
+:sparkles:Соприкоснись с новым миром возможностей, где ограничения сведены к минимуму, а игроки сами определяют будущее проекта. :tools:
+Обещаем сделать всё, чтобы Вам было комфортно начать играть и легко освоиться. 
+Скорее присоединяйся к другим игрокам и оцени работу, которую мы проделали для вас, наших будущих игроков.
+
+Начать играть можно в несколько простых шагов, тебя ждёт :fire: потрясающий игровой мир! Не затягивай, начни сейчас — **54.38.160.107:25612**
+""")
+		emb.set_author(name = "Как? Ты ещё не с нами?", icon_url="https://images-ext-1.discordapp.net/external/dMIAfxxizvGvN8yAjHE1rIEZlZo44PJEt2i2oneBoYM/https/images-ext-1.discordapp.net/external/8U-ni-iOMzcYx-9W3FV5BwlGTNikVeRxEH3E5hYnKzA/https/media.discordapp.net/attachments/713367810985689110/714478708747927592/unknown.png")
+		emb.set_thumbnail(url = "https://images-ext-1.discordapp.net/external/1AXiajN3xjbjin6VR-J4QNOG4Gy4wPP-uabVCUGMAp0/https/media.discordapp.net/attachments/713367810985689110/714404218777239614/anim.gif")
+		await ctx.channel.send(embed = emb)
 #1
 token = os.environ.get("BOT_TOKEN")
 
